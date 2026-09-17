@@ -1,6 +1,6 @@
 # KAERVAX — Business Identity & Responsibility Contract
 
-**Status:** Production Business Contract v1  
+**Status:** Production Business Contract v1.1  
 **Purpose:** Menetapkan identitas bisnis, hubungan brand–entitas hukum–payment identity, dan batas tanggung jawab sebelum KAERVAX digunakan untuk transaksi komersial nyata.
 
 ---
@@ -33,13 +33,25 @@ PAYMENT IDENTITY
 [Duitku merchant/project + rekening settlement sesuai verifikasi]
 ```
 
+Di samping empat identitas bisnis di atas, KAERVAX juga harus menyimpan **Responsible Person Identity** secara terpisah:
+
+```text
+RESPONSIBLE PERSON IDENTITY
+[Nama legal orang yang berwenang/bertanggung jawab]
+      ↓
+berhubungan dengan
+      ↓
+OPERATING / LEGAL ENTITY
+```
+
 Aturan utama:
 
 - **KAERVAX** adalah brand/customer-facing identity.
 - Entitas hukum yang benar harus dinyatakan secara akurat pada tempat yang relevan.
 - Nama brand tidak boleh dipresentasikan sebagai badan hukum jika secara hukum bukan badan hukum tersebut.
 - Nama pada invoice, checkout, payment notification, dan bukti transaksi harus dapat dijelaskan hubungannya dengan KAERVAX.
-- Identitas personal owner tidak boleh dipakai sebagai pengganti identitas badan usaha jika transaksi secara hukum dijalankan oleh badan usaha.
+- Identitas personal owner/responsible person **bukan pengganti legal entity** ketika transaksi secara hukum dijalankan oleh badan usaha.
+- Responsible person boleh dicatat sebagai identitas internal dan/atau ditampilkan pada disclosure tertentu jika memang diwajibkan atau relevan, tetapi tidak boleh mengaburkan pihak yang sebenarnya berkontrak dengan customer.
 
 ---
 
@@ -47,22 +59,36 @@ Aturan utama:
 
 Sebelum production, field berikut **MUST** diisi dari data legal/business yang benar:
 
-| Field | Canonical Value | Required Before Live Transaction |
-|---|---|---|
-| Brand Name | KAERVAX | YES |
-| Official Domain | kaervax.biz.id / production domain yang ditetapkan | YES |
-| Legal Entity Name | `[TBD — exact legal name]` | YES |
-| Legal Entity Type | `[TBD]` | YES |
-| Business Address | `[TBD]` | YES where required |
-| Official Business Email | `[TBD]` | YES |
-| Official Support Channel | `[TBD]` | YES |
-| Tax/Business Identifiers | `[TBD — only where applicable]` | YES where required |
-| Duitku Merchant Identity | `[TBD]` | YES |
-| Settlement Account | `[TBD]` | YES |
-| Customer Invoice Identity | `[TBD]` | YES |
-| Responsible Operator | `[TBD]` | YES internally |
+| Field | Canonical Value | Classification | Required Before Live Transaction |
+|---|---|---|---|
+| Brand Name | KAERVAX | Public | YES |
+| Official Domain | kaervax.biz.id / production domain yang ditetapkan | Public | YES |
+| Legal Entity Name | `[TBD — exact legal name from official document]` | Public/Restricted as applicable | YES |
+| Legal Entity Type | `[TBD — PT / other verified form]` | Public/Restricted as applicable | YES |
+| Business Address | `[TBD — exact registered/business address]` | Restricted; disclose only as required/appropriate | YES where required |
+| Official Business Email | `[TBD — e.g. hello@kaervax.biz.id if verified as official]` | Public | YES |
+| Official Support Channel | `[TBD — verified business channel]` | Public | YES |
+| Responsible Person — Legal Name | `[TBD — exact legal name]` | Internal/Restricted; public only where required/appropriate | YES internally |
+| Tax/Business Identifiers | `[TBD — NIB/NPWP/etc., exact values from authoritative documents]` | Restricted | YES where required |
+| Duitku Merchant Identity | `[TBD — verified merchant/project identity]` | Internal/Customer disclosure as applicable | YES |
+| Settlement Account | `[TBD]` | Restricted | YES |
+| Customer Invoice Identity | `[TBD — exact issuer identity]` | Customer-facing | YES |
 
 **No placeholder may remain in customer-facing production surfaces.**
+
+### 3.1 Verified Personal Identity
+
+If the verified responsible person's legal name is **Haidar Faras Muhadidzib**, it should be stored in the Responsible Person field exactly as it appears on the authoritative legal/business document.
+
+Do **not** automatically use the personal name as the public KAERVAX seller name. The public relationship should follow the actual legal structure.
+
+### 3.2 Verified Legal Entity
+
+If the authoritative business documents confirm the legal entity as **PT Waskita Cakrawarti Digital**, the exact registered name may be recorded as the Legal Entity Name.
+
+Until the current official business document/NIB confirms that exact name, the system MUST treat it as **unverified** and MUST NOT hard-code or publicly claim it as the legal operator.
+
+The same rule applies to the entity type, registered address, NIB, NPWP, and other legal identifiers.
 
 ---
 
@@ -79,6 +105,19 @@ Do not use wording that falsely implies:
 > KAERVAX = [Legal Entity Name]
 
 unless KAERVAX is in fact the registered legal entity name.
+
+If the verified structure is:
+
+```text
+KAERVAX
+   ↓ brand
+PT Waskita Cakrawarti Digital
+   ↓ legal/operator entity
+Haidar Faras Muhadidzib
+   ↓ responsible person
+```
+
+then those roles MUST remain distinct in system data and customer-facing language.
 
 The exact public wording must be synchronized across:
 
@@ -140,8 +179,6 @@ KAERVAX MUST maintain its own internal:
 - verification timestamp;
 - reconciliation state;
 - refund/issue state when applicable.
-
-Duitku documentation confirms that production payment integration uses a merchant/project configuration and that live production access follows merchant identity and website verification. citeturn0search11turn0search5
 
 **Rule:**
 
@@ -266,9 +303,7 @@ The documents must not contain conflicting:
 
 KAERVAX MUST perform a current compliance review before the production system is opened to users for applicable electronic commerce/transaction functionality.
 
-The official Komdigi PSE framework states that private electronic system operators covered by the regulation are required to register, including systems used to provide/manage/operate offers or trading of goods/services and/or financial transaction services. The registration process is described through OSS. citeturn0search0turn0search4
-
-Because regulatory applicability depends on the actual system, business model, entity, and implementation, KAERVAX must **verify its specific obligation rather than assume either exemption or obligation without review**.
+Regulatory applicability must be verified against the actual business model, legal entity, website/app functionality, payment flow, and data processing activities. KAERVAX must **verify its specific obligation rather than assume either exemption or obligation without review**.
 
 Compliance review MUST cover at minimum:
 
@@ -280,8 +315,6 @@ Compliance review MUST cover at minimum:
 - tax/invoicing requirements applicable to the transaction model;
 - sector-specific rules if KAERVAX later serves regulated sectors;
 - recordkeeping and incident/complaint handling.
-
-The June and September 2026 Komdigi enforcement communications show that PSE registration remains an actively enforced requirement, including for domestic providers of professional services and other goods/services. citeturn0search3turn0search7
 
 ---
 
@@ -295,6 +328,7 @@ KAERVAX MUST NOT declare the commercial system production-ready until the follow
 - [ ] Brand-to-entity relationship approved.
 - [ ] Official domain/contact verified.
 - [ ] Responsible operator identified internally.
+- [ ] Personal identity is separated from legal-entity identity.
 
 ### Payment
 
@@ -345,6 +379,9 @@ Not every business/legal detail belongs on the public website.
 
 ### Internal / Restricted
 
+- responsible person's private identifiers;
+- NIB/NPWP and supporting legal documents unless disclosure is required;
+- registered address where not needed publicly;
 - API keys;
 - merchant secret/API credentials;
 - private account credentials;
@@ -360,7 +397,8 @@ Not every business/legal detail belongs on the public website.
 - access tokens;
 - signing secrets;
 - private keys;
-- authentication recovery secrets.
+- authentication recovery secrets;
+- government-issued personal identifiers unless a specific legal requirement and approved disclosure process applies.
 
 ---
 
@@ -373,12 +411,14 @@ No developer, AI agent, connector, or UI component may invent business identity 
 Required pattern:
 
 ```text
+Authoritative Business / Legal Documents
+              ↓
 Canonical Business Identity
-          ↓
+              ↓
 Configuration / Environment
-          ↓
+              ↓
 Application / Checkout / Invoice
-          ↓
+              ↓
 Customer Communication
 ```
 
