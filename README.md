@@ -5,7 +5,7 @@ Demand-first commercial business for digital products, services, and custom syst
 ## Current Status
 
 - **Technical phase:** 1 — Technical Foundation
-- **Technical gate:** G1 assessment pending final production verification
+- **Technical gate:** G1 — **PASS**
 - **Commercial gate:** G0 — **PARTIAL / BLOCKED**
 - **G0 reason:** real public demand signals and a traceable offer hypothesis exist, but no authorized real buyer interaction or buyer response has been recorded.
 - **Authorization boundary:** Phase 1 is an operator-authorized technical-foundation experiment and does not waive or change G0.
@@ -33,7 +33,7 @@ No business API, authentication, payment endpoint, customer portal, state-changi
 ## URLs
 
 - **GitHub:** https://github.com/Sparkmind-obp-off/Kaervax
-- **Production:** populated after verified Cloudflare BYOK deployment
+- **Production:** https://kaervax.pages.dev
 
 ## Runtime Contract
 
@@ -81,7 +81,7 @@ The preview command serves `dist/` on port 3000. In the managed sandbox, use `ec
 - **Platform:** Cloudflare Pages (operator-owned account via BYOK)
 - **Project:** `kaervax`
 - **Production branch:** `main`
-- **Status:** pending final Phase 1 deployment verification
+- **Status:** active and verified on 2026-09-18
 - **Secrets:** no application secret required
 - **Recovery unit:** last verified Git commit, rebuilt and redeployed
 
@@ -98,10 +98,10 @@ The preview command serves `dist/` on port 3000. In the managed sandbox, use `ec
 
 ## Recommended Next Steps
 
-1. Complete production deployment verification and record G1 evidence.
-2. Stop at G1; do not begin Phase 2 automatically.
-3. Separately run one authorized real buyer interaction to address the existing G0 blocker.
-4. Reassess G0 only from new direct commercial evidence.
+1. Stop at G1; do not begin Phase 2 automatically.
+2. Separately run one authorized real buyer interaction to address the existing G0 blocker.
+3. Reassess G0 only from new direct commercial evidence.
+4. Decide explicitly whether and when Phase 2 may begin.
 
 ## Governance and Phase Artifacts
 
