@@ -2,7 +2,8 @@
   "name": "kaervax",
   "version": "1.0.0",
   "private": true,
-  "description": "Small, public-safe KAERVAX technical foundation",
+  "type": "module",
+  "description": "Small, public-safe KAERVAX canonical domain foundation",
   "engines": {
     "node": ">=22"
   },

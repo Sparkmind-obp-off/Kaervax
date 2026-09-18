@@ -1,7 +1,11 @@
 {
   "status": "ready",
-  "service": "kaervax-foundation",
-  "phase": 1,
-  "gate": "G1",
-  "g0": "PARTIAL / BLOCKED"
+  "service": "kaervax-canonical-domain",
+  "phase": 2,
+  "gate": "G2",
+  "g2": "PASS",
+  "g1": "PASS",
+  "g0": "PARTIAL / BLOCKED",
+  "persistence": "DEFERRED",
+  "externalActions": "NOT_IMPLEMENTED"
 }

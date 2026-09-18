@@ -11,21 +11,27 @@ test('runtime contract declares Node 22 and deterministic scripts', async () => 
   assert.equal(pkg.scripts.test, 'node --test')
 })
 
-test('public foundation status preserves the G0 boundary', async () => {
+test('public Phase 2 status preserves independent gate boundaries', async () => {
   const page = await read('public/index.html')
-  assert.match(page, /PHASE 1/)
+  assert.match(page, /PHASE 2/)
+  assert.match(page, /G2 — PASS/)
   assert.match(page, /G0 — PARTIAL \/ BLOCKED/)
-  assert.match(page, /technical foundation/i)
+  assert.match(page, /canonical domain/i)
+  assert.match(page, /Phase 3 tidak otomatis diizinkan/i)
 })
 
 test('health signal is public-safe and machine-readable', async () => {
   const health = JSON.parse(await read('public/health.json'))
   assert.deepEqual(health, {
     status: 'ready',
-    service: 'kaervax-foundation',
-    phase: 1,
-    gate: 'G1',
+    service: 'kaervax-canonical-domain',
+    phase: 2,
+    gate: 'G2',
+    g2: 'PASS',
+    g1: 'PASS',
     g0: 'PARTIAL / BLOCKED',
+    persistence: 'DEFERRED',
+    externalActions: 'NOT_IMPLEMENTED',
   })
 })
 
