@@ -4,74 +4,86 @@ Demand-first commercial business for digital products, services, and custom syst
 
 ## Current Status
 
-- **Phase:** 0 — Validation & Operating Setup
-- **Gate:** G0
-- **Decision:** **PARTIAL / BLOCKED**
-- **Reason:** real public demand signals and a traceable offer hypothesis exist, but no authorized real buyer interaction or buyer response has been recorded.
+- **Technical phase:** 1 — Technical Foundation
+- **Technical gate:** G1 assessment pending final production verification
+- **Commercial gate:** G0 — **PARTIAL / BLOCKED**
+- **G0 reason:** real public demand signals and a traceable offer hypothesis exist, but no authorized real buyer interaction or buyer response has been recorded.
+- **Authorization boundary:** Phase 1 is an operator-authorized technical-foundation experiment and does not waive or change G0.
 
 ## Completed Features / Artifacts
 
-- Canonical governance and Phase 0 execution prompts
-- Demand Discovery Evidence Pack with six public signals and provenance
-- Offer & Delivery Hypothesis Pack
-- Operating Trial Record with candidate qualification and an unsent offer draft
-- G0 Gate Assessment
-- Phase 0 Execution Report
-- Minimal public-safe Phase 0 status page
+- Node.js 22 and npm runtime contract with committed lockfile
+- Deterministic static build and automated build-artifact validation
+- Automated foundation tests
+- Public-safe Phase 1 status page
+- Machine-readable health/readiness signal
+- Security headers for the public static surface
+- Explicit environment, secrets, database, auth, logging, audit, deployment, and recovery decisions
+- Phase 0 evidence artifacts with unchanged G0 assessment
 
 ## Functional Entry URIs
 
-| Path | Purpose | Parameters |
-|---|---|---|
-| `/` | Public-safe Phase 0 status page | None |
+| Path | Purpose | Parameters | Access |
+|---|---|---|---|
+| `/` | Public-safe technical foundation status | None | Public |
+| `/health.json` | Machine-readable readiness and gate-boundary signal | None | Public |
 
-No application API, authentication, payment endpoint, customer portal, or operational database is implemented in Phase 0.
+No business API, authentication, payment endpoint, customer portal, state-changing action, or operational database is implemented.
 
 ## URLs
 
 - **GitHub:** https://github.com/Sparkmind-obp-off/Kaervax
-- **Production:** populated after Cloudflare BYOK deployment
+- **Production:** populated after verified Cloudflare BYOK deployment
 
-## Phase 0 Artifacts
+## Runtime Contract
 
-- `docs/phase-0/41_DEMAND_DISCOVERY_EVIDENCE_PACK.md`
-- `docs/phase-0/42_OFFER_AND_DELIVERY_HYPOTHESIS_PACK.md`
-- `docs/phase-0/43_OPERATING_TRIAL_RECORD.md`
-- `docs/phase-0/44_G0_GATE_ASSESSMENT.md`
-- `docs/phase-0/45_PHASE_0_EXECUTION_REPORT.md`
+- **Node.js:** 22 or newer (`.nvmrc` and `package.json#engines`)
+- **Package manager:** npm
+- **Install:** `npm ci`
+- **Build:** `npm run build`
+- **Test:** `npm test`
+- **Full verification:** `npm run verify`
+- **Preview:** `npm run preview`
+- **Deploy:** `npm run deploy` after approved Cloudflare BYOK authentication
+- **Output:** `dist/`
 
 ## Data Architecture
 
-- **Current records:** version-controlled Markdown evidence artifacts
-- **Storage:** Git repository only
-- **Database:** none
-- **Personal data:** minimized; public usernames omitted from the evidence pack
+- **Current records:** version-controlled Markdown governance and evidence artifacts
+- **Application database:** deferred; not required by the static foundation
+- **Migrations:** deferred with the database
+- **Authentication / authorization:** deferred; no protected capability exists
+- **Production secrets:** none required by the application
+- **Deployment credentials:** supplied outside Git through the approved BYOK mechanism
 - **Evidence classes:** OBSERVED, DERIVED, SYNTHETIC
+
+See `docs/phase-1/42_TECHNICAL_FOUNDATION_BASELINE.md` for the complete foundation contract.
 
 ## User Guide
 
-1. Read the G0 assessment before interpreting any artifact.
-2. Review source references in the Demand Discovery Evidence Pack.
-3. Use the Offer Pack only as an unvalidated V1 hypothesis.
-4. Use the Operating Trial Record for the next authorized buyer experiment.
-5. Do not claim acceptance, payment, delivery, or validation unless direct evidence is added.
+1. Open `/` to inspect the public technical-foundation state.
+2. Open `/health.json` for the machine-readable readiness signal.
+3. Read `docs/phase-0/44_G0_GATE_ASSESSMENT.md` before interpreting commercial readiness.
+4. Do not treat a green test or successful deployment as buyer, payment, delivery, or commercial evidence.
 
-## Local Build and Preview
+## Development and Verification
 
 ```bash
-npm install
-npm run build
-npx wrangler pages dev dist --ip 0.0.0.0 --port 3000
+npm ci
+npm run verify
+npm run preview
 ```
+
+The preview command serves `dist/` on port 3000. In the managed sandbox, use `ecosystem.config.cjs` with PM2 after building.
 
 ## Deployment
 
-- **Platform:** Cloudflare Pages (BYOK)
-- **Build output:** `dist/`
-- **Build command:** `npm run build`
+- **Platform:** Cloudflare Pages (operator-owned account via BYOK)
+- **Project:** `kaervax`
 - **Production branch:** `main`
-- **Status:** pending deployment verification
-- **Secrets:** none required for the static status page
+- **Status:** pending final Phase 1 deployment verification
+- **Secrets:** no application secret required
+- **Recovery unit:** last verified Git commit, rebuilt and redeployed
 
 ## Not Yet Implemented
 
@@ -79,19 +91,25 @@ npx wrangler pages dev dist --ip 0.0.0.0 --port 3000
 - verified payment/refund authority path
 - real delivery and customer acceptance
 - G0 passage
-- Phase 1 technical foundation
+- KAERVAX canonical application domain
 - Runner OS application
+- demand intelligence, scoring, connectors, transaction, or autonomous action
+- database, migrations, authentication, or multi-tenant authorization
 
 ## Recommended Next Steps
 
-1. Select one current candidate or legitimate existing business contact.
-2. Approve the exact recipient, message, channel, and offer version.
-3. Confirm the authorized payment account and commercial terms.
-4. Execute one real interaction and record the strongest verified state.
-5. Reassess G0; do not start Phase 1 automatically.
+1. Complete production deployment verification and record G1 evidence.
+2. Stop at G1; do not begin Phase 2 automatically.
+3. Separately run one authorized real buyer interaction to address the existing G0 blocker.
+4. Reassess G0 only from new direct commercial evidence.
 
-## Governance
+## Governance and Phase Artifacts
 
-Document precedence is defined by `37_KAERVAX_DOCUMENT_GOVERNANCE_AND_SINGLE_SOURCE_OF_TRUTH.md`. The execution contract is `docs/39_KAERVAX_MASTER_SYSTEM_PROMPT_V1.md` with `docs/40_KAERVAX_PHASE_0_EXECUTION_PROMPT_V1.md`.
+- Governance: `37_KAERVAX_DOCUMENT_GOVERNANCE_AND_SINGLE_SOURCE_OF_TRUTH.md`
+- Roadmap: `38_KAERVAX_FULL_EXECUTION_ROADMAP.md`
+- Master prompt: `docs/39_KAERVAX_MASTER_SYSTEM_PROMPT_V1.md`
+- Phase 1 prompt: `docs/41_KAERVAX_PHASE_1_EXECUTION_PROMPT_V1.md`
+- G0 assessment: `docs/phase-0/44_G0_GATE_ASSESSMENT.md`
+- Phase 1 baseline: `docs/phase-1/42_TECHNICAL_FOUNDATION_BASELINE.md`
 
 **Last updated:** 2026-09-18

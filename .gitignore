@@ -14,4 +14,6 @@ pids/
 *.zip
 *.backup
 *.bak
+*.pem
+*.key
 .DS_Store
