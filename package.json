@@ -1,0 +1,14 @@
+{
+  "name": "kaervax-phase-0",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Public-safe KAERVAX Phase 0 validation status page",
+  "scripts": {
+    "build": "rm -rf dist && cp -R public dist",
+    "preview": "wrangler pages dev dist --ip 0.0.0.0 --port 3000",
+    "deploy": "npm run build && wrangler pages deploy dist"
+  },
+  "devDependencies": {
+    "wrangler": "^4.37.1"
+  }
+}

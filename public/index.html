@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Status eksekusi KAERVAX Phase 0 — demand validation, offer hypothesis, dan operating trial.">
+  <title>KAERVAX — Phase 0 Status</title>
+  <style>
+    :root{color-scheme:dark;--bg:#070b0f;--panel:#0e151d;--line:#223141;--text:#f4f7fa;--muted:#9cafc0;--accent:#8ee6c2;--warn:#ffcb6b;--max:1080px}*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 80% 0,#123129 0,transparent 35%),var(--bg);color:var(--text);font:16px/1.65 ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}a{color:var(--accent)}header,main,footer{width:min(calc(100% - 40px),var(--max));margin:auto}header{display:flex;justify-content:space-between;align-items:center;padding:28px 0;border-bottom:1px solid var(--line)}.brand{font-weight:800;letter-spacing:.18em}.phase{color:var(--muted);font-size:.9rem}.hero{padding:86px 0 58px;max-width:860px}.eyebrow{color:var(--accent);font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:.78rem}h1{font-size:clamp(2.8rem,8vw,6.4rem);line-height:.93;letter-spacing:-.06em;margin:.25em 0}.lead{font-size:clamp(1.1rem,2vw,1.35rem);color:var(--muted);max-width:720px}.status{display:inline-flex;gap:10px;align-items:center;margin-top:20px;padding:10px 14px;border:1px solid #6b5426;background:#211b0f;color:var(--warn);border-radius:999px;font-weight:700}.dot{width:8px;height:8px;border-radius:50%;background:var(--warn)}section{padding:42px 0;border-top:1px solid var(--line)}h2{font-size:1.6rem;margin:0 0 18px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{background:linear-gradient(145deg,#111b24,#0b1118);border:1px solid var(--line);border-radius:16px;padding:22px}.card strong{display:block;font-size:1.08rem}.card p{color:var(--muted);margin:.45rem 0 0}.result{color:var(--accent);font-size:.78rem;font-weight:800;letter-spacing:.1em}.blocked{color:var(--warn)}ol{padding-left:1.25rem;color:var(--muted)}.truth{font-size:clamp(1.35rem,3vw,2.3rem);font-weight:800;line-height:1.25;max-width:850px}footer{padding:34px 0 54px;color:var(--muted);font-size:.9rem}@media(max-width:760px){header{align-items:flex-start;gap:12px;flex-direction:column}.hero{padding-top:58px}.grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <header>
+    <span class="brand">KAERVAX</span>
+    <span class="phase">PHASE 0 · GATE G0 · 18 SEP 2026</span>
+  </header>
+  <main>
+    <section class="hero" aria-labelledby="page-title">
+      <p class="eyebrow">Validation &amp; Operating Setup</p>
+      <h1 id="page-title">Evidence before expansion.</h1>
+      <p class="lead">KAERVAX sedang menguji satu hipotesis sederhana: membantu bisnis kecil mengubah satu offer menjadi satu conversion page dengan satu jalur tindakan yang jelas.</p>
+      <p class="status"><span class="dot" aria-hidden="true"></span>G0 — PARTIAL / BLOCKED</p>
+    </section>
+    <section aria-labelledby="sprint-title">
+      <h2 id="sprint-title">Hasil sprint</h2>
+      <div class="grid">
+        <article class="card"><span class="result">SPRINT 0.1 · PASS</span><strong>Demand Discovery</strong><p>Enam sinyal publik dicatat dari dua jenis sumber. Provenance dan klasifikasi bukti dipertahankan.</p></article>
+        <article class="card"><span class="result">SPRINT 0.2 · PASS</span><strong>Offer Hypothesis</strong><p>Satu deliverable, scope, exclusions, workflow, payment boundary, dan evidence plan telah didefinisikan.</p></article>
+        <article class="card"><span class="result blocked">SPRINT 0.3 · BLOCKED</span><strong>Operating Trial</strong><p>Kandidat dikualifikasi dan offer disiapkan, tetapi belum ada interaksi buyer yang diotorisasi.</p></article>
+      </div>
+    </section>
+    <section aria-labelledby="truth-title">
+      <h2 id="truth-title">Yang benar-benar terbukti</h2>
+      <p class="truth">Ada problem pattern yang nyata. Belum ada buyer KAERVAX yang menerima offer, membayar, atau menerima delivery.</p>
+      <p class="lead">Deploy ini membuktikan publikasi teknis saja. Deploy bukan bukti demand, acceptance, payment, atau commercial validation.</p>
+    </section>
+    <section aria-labelledby="next-title">
+      <h2 id="next-title">Next decision</h2>
+      <ol>
+        <li>Pilih satu kandidat aktif dan sah.</li>
+        <li>Setujui pesan, channel, serta authority boundary.</li>
+        <li>Kirim satu offer yang dapat ditelusuri.</li>
+        <li>Catat respons aktual tanpa meningkatkan asumsi menjadi evidence.</li>
+        <li>Tetap di Phase 0 sampai G0 didukung bukti langsung.</li>
+      </ol>
+      <p><a href="https://github.com/Sparkmind-obp-off/Kaervax">Lihat repository dan evidence pack</a></p>
+    </section>
+  </main>
+  <footer>KAERVAX · REAL DEMAND → REAL LEARNING → EVIDENCE-BACKED NEXT DECISION</footer>
+</body>
+</html>
