@@ -1,8 +1,8 @@
-# Kaerfak Brand & Product Hierarchy
+# Kaervax Brand & Product Hierarchy
 
 ## Hierarchy
 ```
-Kaerfak
+Kaervax
 ├── Products
 │   └── Runner OS
 ├── Services
@@ -10,7 +10,7 @@ Kaerfak
 ```
 
 ## Naming Rules
-1. Kaerfak remains the business identity.
+1. Kaervax remains the business identity.
 2. Runner OS remains a product identity.
 3. Private customer implementations do not automatically become brands.
 4. New brands require an explicit strategic reason.
@@ -18,13 +18,13 @@ Kaerfak
 
 ## External Communication
 Preferred:
-> Kaerfak — digital products, services, and custom systems.
+> Kaervax — digital products, services, and custom systems.
 
 Then:
-> Runner OS — a Kaerfak product.
+> Runner OS — a Kaervax product.
 
 For a private build:
-> Custom System by Kaerfak.
+> Custom System by Kaervax.
 
 ## Architecture Principle
 Brand hierarchy must follow business reality, not the other way around.

@@ -1,4 +1,4 @@
-# Kaerfak Business Model V1
+# Kaervax Business Model V1
 
 ## 1. Customer
 Initial customer profile:
@@ -17,10 +17,10 @@ Typical problems:
 - no purpose-built internal system.
 
 ## 3. Value Proposition
-Kaerfak designs and delivers practical digital systems that connect a customer's real workflow to a usable interface, automation, integration, or operational dashboard.
+Kaervax designs and delivers practical digital systems that connect a customer's real workflow to a usable interface, automation, integration, or operational dashboard.
 
 ## 4. Commercial Model
-Kaerfak can monetize through:
+Kaervax can monetize through:
 - fixed-scope products,
 - implementation services,
 - setup/integration services,

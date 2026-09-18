@@ -1,16 +1,16 @@
-# Kaerfak Business Ecosystem Master
+# Kaervax Business Ecosystem Master
 
 ## Status
 **Foundation decision — September 2026**
 
 ## 1. Core Thesis
-Kaerfak is the primary commercial business. Its purpose is to turn real customer problems into useful digital products, services, and custom systems that can produce real transactions.
+Kaervax is the primary commercial business. Its purpose is to turn real customer problems into useful digital products, services, and custom systems that can produce real transactions.
 
-Kaerfak is not a portfolio shell and is not dependent on a single personal project or customer.
+Kaervax is not a portfolio shell and is not dependent on a single personal project or customer.
 
 ## 2. Ecosystem Model
 ```
-KAERFAK
+KAERVAX
 ├── Commercial / Transaction Engine
 ├── Products
 │   └── Runner OS
@@ -21,13 +21,13 @@ KAERFAK
 ```
 
 ## 3. Product Rule
-Runner OS is a product/system under Kaerfak, not a parent brand and not a separate company.
+Runner OS is a product/system under Kaervax, not a parent brand and not a separate company.
 
 A private personalized implementation may exist as a **Private Instance** without changing the public architecture.
 
 ## 4. Focus Allocation
 The operating allocation is:
-- **70%** — Kaerfak revenue, customers, offers, sales, delivery, and business infrastructure.
+- **70%** — Kaervax revenue, customers, offers, sales, delivery, and business infrastructure.
 - **30%** — product development, experimentation, and custom/private system work.
 
 The 70/30 split is an operating heuristic, not a promise or financial forecast.

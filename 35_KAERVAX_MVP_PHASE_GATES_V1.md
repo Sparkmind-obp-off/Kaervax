@@ -1,4 +1,4 @@
-# Kaerfak MVP & Phase Gates V1
+# Kaervax MVP & Phase Gates V1
 
 ## Phase 0 — Business Foundation
 Exit when:

@@ -1,4 +1,4 @@
-# Kaerfak Offer & Revenue Architecture
+# Kaervax Offer & Revenue Architecture
 
 ## 1. Offer Ladder
 ```

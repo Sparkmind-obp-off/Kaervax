@@ -1,7 +1,7 @@
-# Kaerfak Custom System Framework
+# Kaervax Custom System Framework
 
 ## Purpose
-Define how highly personalized systems fit inside Kaerfak without fragmenting the brand.
+Define how highly personalized systems fit inside Kaervax without fragmenting the brand.
 
 ## 1. Custom System
 A custom system is commissioned around a specific user's or organization's workflow.
@@ -20,4 +20,4 @@ A private system may become a portfolio example only when:
 - the example communicates reusable capability rather than exposing the customer.
 
 ## 5. Commercial Position
-Custom Systems are a high-tier Kaerfak offer and should be sold according to scope, responsibility, complexity, and delivery requirements.
+Custom Systems are a high-tier Kaervax offer and should be sold according to scope, responsibility, complexity, and delivery requirements.

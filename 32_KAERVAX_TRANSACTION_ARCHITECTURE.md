@@ -1,4 +1,4 @@
-# Kaerfak Transaction Architecture
+# Kaervax Transaction Architecture
 
 ## Core Loop
 ```

@@ -1,4 +1,4 @@
-# Kaerfak Customer Architecture
+# Kaervax Customer Architecture
 
 ## 1. Customer Hierarchy
 ### Primary
@@ -28,4 +28,4 @@ Discover → Understand → Qualify → Recommend → Scope → Quote → Pay �
 Every stage should create evidence that improves the next commercial decision.
 
 ## 5. Principle
-Kaerfak serves the customer's problem first. Technology is selected after the problem and commercial scope are understood.
+Kaervax serves the customer's problem first. Technology is selected after the problem and commercial scope are understood.
